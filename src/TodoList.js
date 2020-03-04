@@ -5,11 +5,11 @@ import Divider from "@material-ui/core/Divider";
 
 import Todo from "./Todo";
 
-const TodoList = ({ todos, removeTodo, toggleTodo }) => {
+const TodoList = ({ todos, removeTodo, toggleTodo, editTodo }) => {
   return (
     <Paper>
       <List>
-        {todos.map(todo => (
+        {todos.map((todo, i) => (
           <React.Fragment key={todo.id}>
             <Todo
               id={todo.id}
@@ -17,6 +17,7 @@ const TodoList = ({ todos, removeTodo, toggleTodo }) => {
               completed={todo.completed}
               removeTodo={removeTodo}
               toggleTodo={toggleTodo}
+              editTodo={editTodo}
             />
             <Divider />
           </React.Fragment>
